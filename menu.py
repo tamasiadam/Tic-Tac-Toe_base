@@ -1,15 +1,17 @@
 def get_menu_option():
   
-  valasztas = input=("""
+  valasztas = int(input("""
   1. Human vs Human
   2. Random AI vs Random AI
   3. Human vs Random AI
-  4. Human vs Unbeatable AI""")
+  4. Human vs Unbeatable AI
+  """))
 
-  if valasztas > 4:
+  if valasztas < 4:
      return valasztas
   else:
      ValueError
+     
      
 """
   The function should return a number between 1-4.
