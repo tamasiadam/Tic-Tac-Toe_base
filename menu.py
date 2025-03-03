@@ -7,6 +7,9 @@ def get_menu_option():
   4. Human vs Unbeatable AI""")
 
   if valasztas > 4:
+     return valasztas
+  else:
+     ValueError
      
 """
   The function should return a number between 1-4.
