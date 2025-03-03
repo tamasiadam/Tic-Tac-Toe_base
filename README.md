@@ -14,7 +14,9 @@ Implement get_empty_board() to return an empty 3-by-3 board, a list of lists fil
 
 4. Printing the result of the get_empty_board() function shows the following in the terminal.
 
+```bash
 [ [ '.','.','.' ],[ '.','.','.' ],[ '.','.','.' ] ]
+```
 
 ## Get players' move
 Implement get_human_coordinates that asks for user input and returns the coordinates of a valid move on board.
@@ -71,12 +73,14 @@ Implement display_board() that prints the board to the screen.
 
 3. The board is displayed in the following format:
 
+```bash
    1   2   3
 A  . | . | .
   ---+---+---
 B  . | . | .
   ---+---+---
 C  . | . | .
+```
 
 
 ## Print result
