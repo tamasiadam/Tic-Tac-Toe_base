@@ -6,6 +6,8 @@ def get_menu_option():
   3. Human vs Random AI
   4. Human vs Unbeatable AI""")
 
+  if valasztas > 4:
+     
 """
   The function should return a number between 1-4.
   If the user will enter invalid data (for example 5), than a message will appear
