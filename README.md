@@ -1,4 +1,4 @@
-# Tic-Tac-Toe
+# Tic-Tac-Toe ez már a mienk
 <img src="images\tic-tac-toe-image.png" alt="Tic-tac-toe logo" width="300" height="200">
 
 
