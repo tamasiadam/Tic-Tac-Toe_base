@@ -5,14 +5,15 @@ def get_menu_option():
   2. Random AI vs Random AI
   3. Human vs Random AI
   4. Human vs Unbeatable AI
-  """))
+  
+  Válassz:"""))
 
-  if valasztas < 4:
-     return valasztas
-  except
-     ValueError
-     print("Hibás ")
-     
+  if valasztas < 5:
+    return valasztas
+  else:
+    ValueError
+    print("Hiba! Kérlek adj meg egy számot 1-től 4-ig!")
+    get_menu_option()
      
 """
   The function should return a number between 1-4.
@@ -25,5 +26,4 @@ def get_menu_option():
 if __name__ == "__main__":
     # run this file to test you have implemented correctly the function
     option = get_menu_option()
-    print("If the user selected 1, it should print 1")
     print(option) 
