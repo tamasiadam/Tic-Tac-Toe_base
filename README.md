@@ -1,4 +1,6 @@
 # Tic-Tac-Toe
+<img src="images\tic-tac-toe-image.png" alt="Tic-tac-toe logo" width="300" height="200">
+
 
 In this project your job is to implement Tic-Tac-Toe for two players. You also can try writing some AI to play the game. If you find it easy, try to make it unbeatable.
 
