@@ -1,9 +1,12 @@
 def get_empty_board():
-    '''
-    Should return a list with 3 sublists.
-    Each sublist should contain 3 time the "." character
-    '''
-    pass
+  print("""
+       1   2   3
+    A   . | . | . 
+       ---+---+---
+    B   . | . | .
+       --+---+---
+    C   . | . | . 
+       --+---+---""")
 
 
 def display_board(board):
