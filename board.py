@@ -7,8 +7,7 @@ def get_empty_board():
 
 
 def display_board(board):
-  """
-  Should print the tic tac toe board in a format similar to
+  print("""
        1   2   3
     A   X | O | . 
        ---+---+---
@@ -16,16 +15,15 @@ def display_board(board):
        --+---+---
     C   0 | X | . 
        --+---+---
-  """
+  """)
   pass
 
 
 def is_board_full(board):
-  """
-  should return True if there are no more empty place on the board,
-  otherwise should return False
-  """
-  pass
+  if "." not in board:
+    return True
+  else:
+     return False    
 
 
 def get_winning_player(board):
