@@ -9,8 +9,9 @@ def get_menu_option():
 
   if valasztas < 4:
      return valasztas
-  else:
+  except
      ValueError
+     print("Hibás ")
      
      
 """
