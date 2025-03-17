@@ -1,10 +1,9 @@
 def get_human_coordinates(board, current_player):
-  human_coordinate = input("Your turn! (write a position eg. A2)")
-  if human_coordinate == "":
+  human_coordinate = input("Your turn! (write a position eg. A2) ")
+  if board[human_coordinate[0]][human_coordinate[1]] == ".":
     return human_coordinate
   else:
-    print("Incorrect! Choose another one!")
-
+    print("Incorrect! Choose another one! ")
 
   """
   Should return the read coordinates for the tic tac toe board from the terminal.
