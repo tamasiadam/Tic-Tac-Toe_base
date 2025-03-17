@@ -6,7 +6,7 @@ def get_menu_option():
   4. Human vs Unbeatable AI\n
   Please select a gamemode: """))
 
-    if valasztas < 5:
+    if valasztas < 5 and valasztas > 0:
         print(f"Mode {valasztas} selected!")
         return valasztas
     else:
