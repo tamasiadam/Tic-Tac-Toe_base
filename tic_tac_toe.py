@@ -29,7 +29,7 @@ def main():
         ### TO DO ###
         # based on the value of the variables `game_mode` and `current_player` 
         # the programm should should choose betwen the functions
-        # get_random_ai_coordinates or get_umbeatable_ai_coordinates or get_human_coordinates
+        # get_random_ai_coordinates or get_unbeatable_ai_coordinates or get_human_coordinates
         if game_mode == HUMAN_VS_HUMAN or current_player == 'X':
             x, y = get_human_coordinates(board, current_player)
         elif game_mode == HUMAN_VS_RANDOM_AI and current_player == 'O':
