@@ -11,13 +11,12 @@ def main():
     symbol_1, symbol_2 = symbol_select_human_vs_human()
     full = isFull(board, symbol_1, symbol_2) # The function that starts the game is also in here.
 
-def symbol_select_human_vs_human():
 # This function decides the players' symbols
-    symbol_1 = input("Player 1 choose your symbol! O or X")
+    symbol_1 = input("Player 1, do you want to be X or O? ")
     if symbol_1 == "X":
         symbol_2 = "O"
         print("Player 1 is X\nPlayer 2 is O")
-    else:
+    elif:
         symbol_2 = "X"
         print("Player 2, you are X. ")
     input("Press enter to continue.")
@@ -95,6 +94,21 @@ def isFull(board, symbol_1, symbol_2):
 def outOfBoard(row, column):
 # This function tells the players that their selection is out of range
     print("Out of boarder. Pick another one. ")
+    
+    
+
+def board_decoration(board):
+# This function prints the board nice!
+    rows = len(board)
+    cols = len(board)
+    print(" A   B   C ")
+    print("---+---+---")
+    for r in range(rows):
+        print(board[r][0], " |", board[r][1], "|", board[r][2])
+        print("---+---+---")
+    return board
+
+
 
 def isWinner(board, symbol_1, symbol_2, count):
 # This function checks if any winner is winning
