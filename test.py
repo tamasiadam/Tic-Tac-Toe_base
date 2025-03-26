@@ -13,19 +13,22 @@ def main():
 
 def symbol_select_human_vs_human():
 # This function decides the players' symbols
-    symbol_1 = input("\nPlayer 1 choose your symbol (X or O): ")
-    if symbol_1 == "X":
-        symbol_2 = "O"
-        print(f"Player 1 is {symbol_1}\nPlayer 2 is {symbol_2}")
-    elif symbol_1 != "X" or symbol_1 != "O":
-        ValueError
-        print("Invalid symbol. Try again.")
-        symbol_select_human_vs_human()
-
+    while True:
+        symbol_1 = input("\nPlayer 1 choose your symbol (X or O): ").upper()
+        if symbol_1 == "X":
+            symbol_2 = "O"
+            print(f"\nPlayer 1 is {symbol_1}\nPlayer 2 is {symbol_2}")
+            break
+        elif symbol_1 == "O":
+            symbol_2 = "X"
+            print(f"\nPlayer 1 is {symbol_1}\nPlayer 2 is {symbol_2}")
+            break
+        else:
+            print("Invalid symbol. Please choose either 'X' or 'O'.")
     return symbol_1, symbol_2
 
 
-def startGamming(board, symbol_1, symbol_2, count):
+def start(board, symbol_1, symbol_2, count):
 # This function starts the game.
 
     # Decides the turn
@@ -33,7 +36,7 @@ def startGamming(board, symbol_1, symbol_2, count):
         player = symbol_1
     elif count % 2 == 1:
         player = symbol_2
-    print("Player "+ player + ", it is your turn. ")
+    print("\nPlayer "+ player + ", it is your turn. ")
     row = int(input("Pick a row:"
                     "[upper row: enter 0, middle row: enter 1, bottom row: enter 2]:"))
     column = int(input("Pick a column:"
@@ -55,7 +58,7 @@ def startGamming(board, symbol_1, symbol_2, count):
                         "[enter 0, middle row: enter 1, bottom row: enter 2]:"))
         column = int(input("Pick a column:"
                             "[left column: enter 0, middle column: enter 1, right column enter 2]"))    
-        
+    
     # Locates player's symbol on the board
     if player == symbol_1:
         board[row][column] = symbol_1
@@ -72,7 +75,7 @@ def isFull(board, symbol_1, symbol_2):
     winner = True
 # This function check if the board is full
     while count < 10 and winner == True:
-        gaming = startGamming(board, symbol_1, symbol_2, count)
+        gaming = start(board, symbol_1, symbol_2, count)
         pretty = board_decoration(board)
         
         if count == 9:

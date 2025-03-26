@@ -10,7 +10,6 @@ def get_menu_option():
         print(f"Mode {valasztas} selected!")
         return valasztas
     else:
-        ValueError
         print("\nError! Please select a number from 1 to 4!")
         get_menu_option()
 
