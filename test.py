@@ -1,4 +1,4 @@
-from board import display_board, get_empty_board, is_board_full, get_winning_player
+from board import display_board, get_empty_board, is_board_full, get_winning_player, board_decoration
 from coordinates import get_human_coordinates, get_random_ai_coordinates, get_unbeatable_ai_coordinates
 from menu import get_menu_option
 
@@ -6,24 +6,12 @@ from menu import get_menu_option
 def main():
 # The main function
     gamemode = get_menu_option()
-    board = create_grid()
+    board = get_empty_board()
     decoration = board_decoration(board)
-    symbol_1, symbol_2 = symbol_select()
+    symbol_1, symbol_2 = symbol_select_human_vs_human()
     full = isFull(board, symbol_1, symbol_2) # The function that starts the game is also in here.
-    
 
-    
-
-    get_menu_option()
-def create_grid():
-# This function creates the board
-    print("Here is the board: ")
-    board = [[" ", " ", " "],
-             [" ", " ", " "],
-             [" ", " ", " "]]        
-    return board
-
-def symbol_select_hh():
+def symbol_select_human_vs_human():
 # This function decides the players' symbols
     symbol_1 = input("Player 1 choose your symbol! O or X")
     if symbol_1 == "X":
