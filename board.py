@@ -16,7 +16,6 @@ def board_decoration(board):
         print("---+---+---")
     return board
 
-
 def is_board_full(board):
   if "." not in board:
     return True
