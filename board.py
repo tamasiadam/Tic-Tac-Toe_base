@@ -1,20 +1,9 @@
+
 def get_empty_board():
-# This function creates the board
     print("Here is the board: ")
     board = [[" ", " ", " "],
              [" ", " ", " "],
-             [" ", " ", " "]]        
-    return board
-
-def board_decoration(board):
-# This function prints the board nice!
-    rows = len(board)
-    cols = len(board)
-    print(" A   B   C ")
-    print("---+---+---")
-    for r in range(rows):
-        print(board[r][0], " |", board[r][1], "|", board[r][2])
-        print("---+---+---")
+             [" ", " ", " "]]
     return board
 
 def display_board(board):
