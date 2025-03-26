@@ -12,20 +12,7 @@ def get_human_coordinates(board, current_player):
   If the user enters the word "quit" in any format of capitalized letters the program
   should stop.
   """
-  human_coordinate = human_coordinate.upper()
-  if human_coordinate == "QUIT":
-    quit()
-  while len(human_coordinate) != 2 or human_coordinate[0] not in "ABC" or human_coordinate[1] not in "123":
-    print("Invalid coordinate! Please try again.")
-    human_coordinate = input("Your turn! (write a position eg. A2) ")
-    human_coordinate = human_coordinate.upper()
-  x = ord(human_coordinate[0]) - 65
-  y = int(human_coordinate[1]) - 1
-  if board[x][y] != ".":
-    print("This position is already taken! Please try again.")
-    return get_human_coordinates(board, current_player)
-  return x, y
-  
+  pass
 
 
 def get_random_ai_coordinates(board, current_player):
