@@ -1,4 +1,3 @@
-
 def get_empty_board():
     print("Here is the board: ")
     board = [[" ", " ", " "],
