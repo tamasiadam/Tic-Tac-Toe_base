@@ -1,14 +1,14 @@
 def get_menu_option():
-    valasztas = int(input("""
+    option = int(input("""
   1. Human vs Human
   2. Random AI vs Random AI
   3. Human vs Random AI
   4. Human vs Unbeatable AI\n
   Please select a gamemode: """))
 
-    if valasztas < 5 and valasztas > 0:
-        print(f"Mode {valasztas} selected!")
-        return valasztas
+    if option < 5 and option > 0:
+        print(f"Mode {option} selected!")
+        return option
     else:
         print("\nError! Please select a number from 1 to 4!")
         get_menu_option()
