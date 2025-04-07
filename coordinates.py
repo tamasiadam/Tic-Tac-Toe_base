@@ -1,3 +1,35 @@
+def man_coordinates(board, symbol_1, symbol_2, count):
+
+    row = int(input("Pick a row:"
+                    "\nupper row: 0\nmiddle row 1\nbottom row: 2 \n"))
+    column = int(input("Pick a column:"
+                       "\nleft column: 0\nmiddle column 1\nright column: 2 \n"))
+
+
+    while (row > 2 or row < 0) or (column > 2 or column < 0):
+        outOfBoard(row, column)
+        row = int(input("Pick a row:"
+                    "\nupper row: 0\nmiddle row 1\nbottom row: 2 \n"))
+        column = int(input("Pick a column:"
+                       "\nleft column: 0\nmiddle column 1\nright column: 2 \n"))
+
+    while (board[row][column] == symbol_1) or (board[row][column] == symbol_2):
+        filled = illegal(board, symbol_1, symbol_2, row, column)
+        row = int(input("Pick a row\nupper row:"
+                        "0\nmiddle row: 1\nbottom row: 2 \n"))
+        column = int(input("Pick a column:"
+                           "\nleft column: 0\nmiddle column: 1\nright column 2 \n"))
+
+    if player == symbol_1:
+        board[row][column] = symbol_1
+
+    else:
+        board[row][column] = symbol_2
+
+    return (board)
+
+
+
 def get_human_coordinates(board, current_player):
 
   human_coordinate = input("Your turn! (write a position eg. A2) ")

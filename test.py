@@ -6,6 +6,7 @@ from menu import get_menu_option
 def main():
 
     gamemode = get_menu_option()
+    coordinates = man_coordinates()
     board = get_empty_board()
     decoration = board_decoration(board)
     symbol_1, symbol_2 = symbol_select_human_vs_human()
