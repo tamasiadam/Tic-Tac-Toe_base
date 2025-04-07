@@ -38,24 +38,24 @@ def start(board, symbol_1, symbol_2, count):
         player = symbol_2
     print("\nPlayer " + player + ", it is your turn. ")
     row = int(input("Pick a row:"
-                    "upper row: 0\nmiddle row 1\nbottom row: 2"))
+                    "\nupper row: 0\nmiddle row 1\nbottom row: 2 \n"))
     column = int(input("Pick a column:"
-                       "left column: 0\nmiddle column 1\nright column: 2"))
+                       "\nleft column: 0\nmiddle column 1\nright column: 2 \n"))
 
 
     while (row > 2 or row < 0) or (column > 2 or column < 0):
         outOfBoard(row, column)
         row = int(input("Pick a row:"
-                    "\nupper row: 0\nmiddle row 1\nbottom row: 2\n"))
+                    "\nupper row: 0\nmiddle row 1\nbottom row: 2 \n"))
         column = int(input("Pick a column:"
-                       "left column: 0\nmiddle column 1\nright column: 2"))
+                       "\nleft column: 0\nmiddle column 1\nright column: 2 \n"))
 
     while (board[row][column] == symbol_1) or (board[row][column] == symbol_2):
         filled = illegal(board, symbol_1, symbol_2, row, column)
         row = int(input("Pick a row\nupper row:"
-                        "0\nmiddle row: 1\nbottom row: 2\n"))
+                        "0\nmiddle row: 1\nbottom row: 2 \n"))
         column = int(input("Pick a column:"
-                           "\nleft column: 0\nmiddle column: 1\nright column 2\n"))
+                           "\nleft column: 0\nmiddle column: 1\nright column 2 \n"))
 
     if player == symbol_1:
         board[row][column] = symbol_1
