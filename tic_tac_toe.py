@@ -10,7 +10,7 @@ HUMAN_VS_UNBEATABLE_AI = 4
 
 def main():
 
-    game_mode = get_menu_option() # játékmód kiválasztása
+    gamemode = get_menu_option() # játékmód kiválasztása
     board = get_empty_board() # üres játéktabla 
     is_game_running = True # játék folyamatban
     while is_game_running: # amíg játék folyamatban
