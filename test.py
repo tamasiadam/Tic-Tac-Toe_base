@@ -6,6 +6,7 @@ from menu import get_menu_option
 def main():
 
     gamemode = get_menu_option()
+    coordinates = man_coordinates()
     board = get_empty_board()
     decoration = board_decoration(board)
     symbol_1, symbol_2 = symbol_select_human_vs_human()
@@ -38,24 +39,24 @@ def start(board, symbol_1, symbol_2, count):
         player = symbol_2
     print("\nPlayer " + player + ", it is your turn. ")
     row = int(input("Pick a row:"
-                    "upper row: 0\nmiddle row 1\nbottom row: 2"))
+                    "\nupper row: 0\nmiddle row 1\nbottom row: 2 \n"))
     column = int(input("Pick a column:"
-                       "left column: 0\nmiddle column 1\nright column: 2"))
+                       "\nleft column: 0\nmiddle column 1\nright column: 2 \n"))
 
 
     while (row > 2 or row < 0) or (column > 2 or column < 0):
         outOfBoard(row, column)
         row = int(input("Pick a row:"
-                    "upper row: 0\nmiddle row 1\nbottom row: 2"))
+                    "\nupper row: 0\nmiddle row 1\nbottom row: 2 \n"))
         column = int(input("Pick a column:"
-                       "left column: 0\nmiddle column 1\nright column: 2"))
+                       "\nleft column: 0\nmiddle column 1\nright column: 2 \n"))
 
     while (board[row][column] == symbol_1) or (board[row][column] == symbol_2):
         filled = illegal(board, symbol_1, symbol_2, row, column)
-        row = int(input("Pick a row[upper row:"
-                        "[enter 0, middle row: enter 1, bottom row: enter 2]:"))
+        row = int(input("Pick a row\nupper row:"
+                        "0\nmiddle row: 1\nbottom row: 2 \n"))
         column = int(input("Pick a column:"
-                           "[left column: enter 0, middle column: enter 1, right column enter 2]"))
+                           "\nleft column: 0\nmiddle column: 1\nright column 2 \n"))
 
     if player == symbol_1:
         board[row][column] = symbol_1
