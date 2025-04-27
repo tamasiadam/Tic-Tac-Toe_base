@@ -8,7 +8,7 @@ def get_menu_option():
   3. Human vs Hard Bot\n
   Please select a gamemode: """))
 
-    if option < 4 and option > 0:
+    if option < 4 and option >= 0:
         print(f"\n  {modes[option]} mode selected!\n")
         return option
     else:
@@ -18,3 +18,17 @@ def get_menu_option():
 
 if __name__ == "__main__":
     option = get_menu_option()
+
+def symbol_select():
+    while True:
+        player_one = input("Player 1, choose your symbol (X/O): ").strip().upper()
+        if player_one in ('X', 'O'):
+            player_two = 'O' if player_one == 'X' else 'X'
+            print(f"Player 1 is '{player_one}', Player 2 is '{player_two}'.\n")
+            return player_one
+        else:
+            print("Invalid choice. Please enter 'X' or 'O'.\n")
+
+if __name__ == "__main__":
+    mode = get_menu_option()
+    player_one = symbol_select()

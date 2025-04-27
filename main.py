@@ -11,7 +11,7 @@ def main():
     elif mode == 1:
         print("Hamarosan")
     elif mode == 2:
-        print("A KRUVA ANYAD")
+        game.Simulation(mode)
     elif mode == 3:
         print("Hamarosan..")
 
