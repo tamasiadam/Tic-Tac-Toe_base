@@ -1,19 +1,20 @@
 from game import TicTacToe
-from menu import get_menu_option, choose_team
+from menu import get_menu_option, symbol_select
 
 
 def main():
-    gamemode = get_menu_option()
-    if gamemode == 0:
-        player_one = choose_team()
-    elif gamemode == 1:
-        print("Hamarosan")
-    elif gamemode == 2:
-        print("Hamarosan...")
-    elif gamemode == 3:
-        print("Hamarosan..")
     game = TicTacToe()
-    game.play(gamemode)
+    mode = get_menu_option()
+    if mode == 0:
+        player_one = symbol_select()
+        game.play(mode)
+    elif mode == 1:
+        print("Hamarosan")
+    elif mode == 2:
+        print("A KRUVA ANYAD")
+    elif mode == 3:
+        print("Hamarosan..")
+
     
 
 
