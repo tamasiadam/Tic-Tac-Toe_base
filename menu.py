@@ -3,12 +3,12 @@ def get_menu_option():
 
     option = int(input("""
   0. Human vs Human
-  1. Random AI vs Random AI
-  2. Human vs Random AI
-  3. Human vs Unbeatable AI\n
+  1. Human vs Bot
+  2. Simulated play (Bot vs Bot)
+  3. Human vs Hard Bot\n
   Please select a gamemode: """))
 
-    if option < 5 and option > 0:
+    if option < 4 and option > 0:
         print(f"\n  {modes[option]} mode selected!\n")
         return option
     else:

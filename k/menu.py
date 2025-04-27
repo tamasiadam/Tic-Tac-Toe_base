@@ -1,17 +1,23 @@
 def get_menu_option():
-    mode = int(input("""
-  1. Human vs Human
-  2. Random AI vs Random AI
-  3. Human vs Random AI
-  4. Human vs Unbeatable AI\n
+    modes = ["Human vs Human", "Human vs Bot", "Simulated play", "Human vs Hard Bot"]
+
+    option = int(input("""
+  0. Human vs Human
+  1. Human vs Bot
+  2. Simulated play (Bot vs Bot)
+  3. Human vs Hard Bot\n
   Please select a gamemode: """))
 
-    if mode < 5 and mode > 0:
-        print(f"Mode {mode} selected!")
-        return mode
+    if option < 4 and option > 0:
+        print(f"\n  {modes[option]} mode selected!\n")
+        return option
     else:
-        print("\nError! Please select a number from 1 to 4!")
+        print("\n   Error! Please select a number from 0 to 3!")
         get_menu_option()
+
+
+if __name__ == "__main__":
+    option = get_menu_option()
 
 def choose_team():
     while True:

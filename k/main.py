@@ -4,13 +4,14 @@ from menu import get_menu_option, choose_team
 
 def main():
     gamemode = get_menu_option()
-    if gamemode != 2 or gamemode <= 4:
-       player_one = choose_team()
-       
-
-    
-
-        
+    if gamemode == 0:
+        player_one = choose_team()
+    elif gamemode == 1:
+        print("Hamarosan")
+    elif gamemode == 2:
+        print("Hamarosan...")
+    elif gamemode == 3:
+        print("Hamarosan..")
     game = TicTacToe()
     game.play(gamemode)
     

@@ -1,3 +1,4 @@
+import random
 from menu import get_menu_option
 
 class TicTacToe:
@@ -66,3 +67,15 @@ class TicTacToe:
                 break
 
             self.switch_player()
+
+def ai_steps():
+    # Sorok és oszlopok definiálása
+    rows = ['A', 'B', 'C']
+    cols = ['0', '1', '2']
+    # Véletlenszerű sor és oszlop kiválasztása
+    row = random.choice(rows)
+    col = random.choice(cols)
+    coord = f"{row}{col}"
+    print(coord)
+    return coord
+
