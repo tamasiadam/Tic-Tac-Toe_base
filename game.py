@@ -33,7 +33,7 @@ class TicTacToe:
                 return self.board[a]
         return None
 
-    def is_draw(self):
+    def draw(self):
         return all(cell != ' ' for cell in self.board) and self.check_winner() is None
 
     def switch_player(self):
@@ -61,7 +61,7 @@ class TicTacToe:
                 print(f"Congratulations! Player {winner} wins!")
                 break
 
-            if self.is_draw():
+            if self.draw():
                 self.display_board()
                 print("It's a draw!")
                 break
