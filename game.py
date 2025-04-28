@@ -88,7 +88,7 @@ class TicTacToe:
         def check_draw():
             return all(cell != " " for cell in grid)
 
-        def max_mini(player_mark, opponent_mark, depth, is_maximizing): #legjobb lépés
+        def minimax(player_mark, opponent_mark, depth, is_maximizing): #legjobb lépés
             if check_win(player_mark):
                 return 1
             if check_win(opponent_mark):
@@ -101,7 +101,7 @@ class TicTacToe:
                 for i in range(9):
                     if grid[i] == " ":
                         grid[i] = player_mark
-                        score = max_mini(player_mark, opponent_mark, depth+1, False)
+                        score = minimax(player_mark, opponent_mark, depth+1, False)
                         grid[i] = " "
                         best_score = max(best_score, score)
                 return best_score
@@ -110,7 +110,7 @@ class TicTacToe:
                 for i in range(9):
                     if grid[i] == " ":
                         grid[i] = opponent_mark
-                        score = max_mini(player_mark, opponent_mark, depth+1, True)
+                        score = minimax(player_mark, opponent_mark, depth+1, True)
                         grid[i] = " "
                         best_score = min(best_score, score)
                 return best_score
@@ -121,7 +121,7 @@ class TicTacToe:
             for i in range(9):
                 if grid[i] == " ":
                     grid[i] = mark
-                    score = max_mini(mark, opponent_mark, 0, False)
+                    score = minimax(mark, opponent_mark, 0, False)
                     grid[i] = " "
                     if score > best_score:
                         best_score, best_move = score, i
