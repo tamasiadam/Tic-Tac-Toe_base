@@ -9,14 +9,9 @@ def main():
         player_one = symbol_select()
         game.play(mode)
     elif mode == 1:
-        print("Hamarosan")
+        game.humanvsbot()
     elif mode == 2:
         game.Simulation(mode)
-    elif mode == 3:
-        print("Hamarosan..")
-
-    
-
 
 if __name__ == "__main__":
     main()
