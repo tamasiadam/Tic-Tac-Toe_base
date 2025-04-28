@@ -156,11 +156,12 @@ class TicTacToe:
                 print("It's a Draw!")
                 break
 
-    def humanvsbot(self):
+    def humanvsbot(self, mode):
+        AI = "O"
         print("You are X, AI is O.\n")
         while True:
             self.display_board()
-            print(f"Player {self.current_player}, enter your move (e.g. A0): ", end="")
+            print(f"Player, enter your move (e.g. A0): ", end="")
             raw = input().strip().upper()
 
             if len(raw) != 2 or raw[0] not in 'ABC' or raw[1] not in '012':
@@ -173,32 +174,21 @@ class TicTacToe:
                 print("Cell already taken or invalid. Try again.")
                 continue
 
+            self.switch_player()
+            self.display_board()
+            if self.current_player == "O":
+                ai_move(AI)
+                if check_win(AI):
+                    print("X won!") 
+                    break
+                current = AI_two
+
             winner = self.check_winner()
             if winner:
                 self.display_board()
-                print(f"Congratulations! Player {winner} wins!")
+                print(f"Congratulations! {winner} wins!")
                 break
             if self.draw():
                 self.display_board()
                 print("It's a draw!")
                 break
-            self.switch_player()
-            self.display_board()
-            if self.current_player == 'X':
-                print(f"Player {self.current_player}, enter your move (e.g. A0): ", end="")
-                raw = input().strip().upper()
-
-                if len(raw) != 2 or raw[0] not in "ABC" or raw[1] not in "012":
-                    print("Invalid input. Use format A0, B1, C2 etc. Column A-C, row 0-2.")
-                    continue
-
-                y = ord(raw[0]) - ord("A")  # oszlop
-                x = int(raw[1])             # sor
-
-                if not self.make_move(x, y):
-                    print("Cell already taken or invalid. Try again.")
-                    continue
-            else:
-                self.bot_move()
-
-
