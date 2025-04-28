@@ -164,30 +164,36 @@ class TicTacToe:
             print(f"Player, enter your move (e.g. A0): ", end="")
             raw = input().strip().upper()
 
-            if len(raw) != 2 or raw[0] not in 'ABC' or raw[1] not in '012':
+            # Input validation
+            if len(raw) != 2 or raw[0] not in 'ABC' or not raw[1].isdigit() or int(raw[1]) not in range(3):
                 print("Invalid input. Use format A0, B1, C2 etc.")
                 continue
             y = ord(raw[0]) - ord('A')  # column
             x = int(raw[1])             # row
 
+            # Make the move
             if not self.make_move(x, y):
                 print("Cell already taken or invalid. Try again.")
                 continue
 
+            # Switch player to AI
             self.switch_player()
             self.display_board()
+
+            # AI's move
             if self.current_player == "O":
                 ai_move(AI)
                 if check_win(AI):
-                    print("X won!") 
+                    print("O won!")  # Correct message for AI win
                     break
-                current = AI_two
 
+            # Check for winner or draw
             winner = self.check_winner()
             if winner:
                 self.display_board()
                 print(f"Congratulations! {winner} wins!")
                 break
+
             if self.draw():
                 self.display_board()
                 print("It's a draw!")
